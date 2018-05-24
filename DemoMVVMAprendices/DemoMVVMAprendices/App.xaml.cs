@@ -13,7 +13,7 @@ namespace DemoMVVMAprendices
 		{
 			InitializeComponent();
 
-			MainPage = new DemoMVVMAprendices.MainPage();
+            MainPage = new NavigationPage(new View.AprendizPage());
 		}
 
 		protected override void OnStart ()
