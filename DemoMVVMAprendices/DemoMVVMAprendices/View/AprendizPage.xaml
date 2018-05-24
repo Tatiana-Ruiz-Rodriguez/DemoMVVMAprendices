@@ -20,13 +20,32 @@
                 Command="{Binding CargarAprendizCommand }"/>
         <ActivityIndicator IsRunning="{Binding IsEnabled}"
                            IsVisible="{Binding IsEnabled}"/>
-        <ListView>
+
+        <ListView ItemsSource="{Binding Aprendices}"
+                  HasUnevenRows="True"
+                  x:Name="lstName">
+         
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+
+                            <Label Text="{Binding Nombre}"
+                                   FontSize="18"/>
+                            <Label Text="{Binding Apellido}"
+                                   FontSize="18"/>
+
+                        </StackLayout>
+                        
+                        <Label Text="{Binding Promedio}"
+                                   TextColor="{Binding Promedio.Converter={StaticResource promConverter}"/>
+                    </StackLayout>                    
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
             
         </ListView>
-
-
-
-
 
     </StackLayout>
 </ContentPage>
